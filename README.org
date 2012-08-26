@@ -1,0 +1,21 @@
+#+TITLE: Books REST service using MongoDB and Scalatra
+#+AUTHOR: José Miguel
+
+* Abstract
+
+REST service backed by a MongoDB instance serving book information,
+like title, author, editorial, etc. Using scalatra to implement the
+web stack.
+
+* Jetty
+
+Run sbt task 'container:start' and browse to http://localhost:8080
+
+* DONE basic datamodel: book, author, authors
+* TODO mongodb crud
+* TODO mongodb lists
+* TODO sorting lists
+* TODO xml view
+* TODO json view
+* TODO yaml view
+

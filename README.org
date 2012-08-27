@@ -16,7 +16,7 @@ Run sbt task 'container:start' and browse to http://localhost:8080
 * TODO mongodb lists
 * TODO sorting lists
 * TODO xml view
-* TODO json view
+* DONE json view
 * TODO yaml view
 * TODO clean up database
 * DONE jade replacing scaml

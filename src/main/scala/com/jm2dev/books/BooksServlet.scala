@@ -11,6 +11,12 @@ class BooksServlet extends ScalatraServlet with ScalateSupport {
     jade("/index")
   }
 
+  get("/books") {
+    contentType = "application/json"
+
+    """{"title": "mi título"}"""
+  }
+
   notFound {
     // remove content type in case it was set through an action
     contentType = null 

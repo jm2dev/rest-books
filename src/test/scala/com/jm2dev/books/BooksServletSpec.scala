@@ -2,15 +2,21 @@ package com.jm2dev.books
 
 import org.scalatra.test.specs2._
 
-// For more on Specs2, see http://etorreborre.github.com/specs2/guide/org.specs2.guide.QuickStart.html 
 class BooksServletSpec extends ScalatraSpec { def is =
   "GET / on BooksServlet"                     ^
     "should return status 200"                  ! root200^
+                                                end^
+  "GET /hello-scalate on BooksServlet"        ^
+    "should return status 200"                  ! hello_scalate200^
                                                 end
-    
+                                             
   addServlet(classOf[BooksServlet], "/*")
 
   def root200 = get("/") { 
+    status must_== 200
+  }
+
+  def hello_scalate200 = get("/hello-scalate") {
     status must_== 200
   }
 }

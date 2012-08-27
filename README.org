@@ -18,4 +18,5 @@ Run sbt task 'container:start' and browse to http://localhost:8080
 * TODO xml view
 * TODO json view
 * TODO yaml view
-
+* TODO clean up database
+* DONE jade replacing scaml

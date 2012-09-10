@@ -1,5 +1,5 @@
 #+TITLE: Books REST service using MongoDB and Scalatra
-#+AUTHOR: José Miguel
+#+AUTHOR: José Miguel Martínez Carrasco
 
 * Abstract
 
@@ -17,6 +17,8 @@ Run sbt task 'container:start' and browse to http://localhost:8080
 * TODO sorting lists
 * TODO xml view
 * DONE json view
-* TODO yaml view
+* TODO yaml view: [[http://code.google.com/p/snakeyaml/wiki/Documentation][snakeyaml]]
 * TODO clean up database
 * DONE jade replacing scaml
+* TODO rpm package
+* TODO log file

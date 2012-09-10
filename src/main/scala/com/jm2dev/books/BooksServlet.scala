@@ -2,8 +2,12 @@ package com.jm2dev.books
 
 import org.scalatra._
 import scalate.ScalateSupport
+import com.jm2dev.books.service.BookService
+import com.codahale.jerkson.Json._
 
 class BooksServlet extends ScalatraServlet with ScalateSupport {
+
+  private val bookService = new BookService()
 
   get("/") {
     contentType="text/html"
@@ -14,7 +18,8 @@ class BooksServlet extends ScalatraServlet with ScalateSupport {
   get("/books") {
     contentType = "application/json"
 
-    """{"title": "mi título"}"""
+    val books = bookService.findAll()
+    generate(books)
   }
 
   notFound {

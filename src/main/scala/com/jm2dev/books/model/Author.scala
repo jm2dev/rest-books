@@ -1,6 +1,10 @@
 package com.jm2dev.books.model
 
-case class Author(firstName: String, familyName: String) 
+import com.codahale.jerkson.Json._
+
+case class Author(firstName: String, familyName: String) {
+  def toJSON = generate(this)
+}
 
 class Authors(authors: List[Author]) {
   val knownAuthors: List[Author] = authors
@@ -11,4 +15,6 @@ class Authors(authors: List[Author]) {
     val authorsUpdated = author :: knownAuthors
     new Authors(authorsUpdated)
   }
+
+  def toJSON = generate(this.knownAuthors)
 }

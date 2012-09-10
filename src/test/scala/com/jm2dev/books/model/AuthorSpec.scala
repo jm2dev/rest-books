@@ -15,6 +15,12 @@ class AuthorSpec extends Specification {
     "have a family name" in {
       author.familyName must not be empty
     }
+
+    "have a JSON representation" in {
+      val jsonAuthor = author.toJSON 
+      jsonAuthor must */("firstName" -> firstName) 
+      jsonAuthor must */("familyName" -> familyName)
+    }
   }
 }
 
@@ -25,7 +31,7 @@ class AuthorsSpec extends Specification {
   private val authors = new Authors(List(author))
 
   "Authors" should {
-    "must have at least one member" in {
+    "have at least one member" in {
       authors.howMany must beGreaterThan(0)
     }
 
@@ -33,6 +39,12 @@ class AuthorsSpec extends Specification {
       val initialNumberOfAuthors = authors.howMany
       val newAuthors = authors.add(author)
       newAuthors.howMany must beGreaterThan(initialNumberOfAuthors)
+    }
+
+    "have a JSON representation" in {
+      val jsonAuthors = authors.toJSON
+      jsonAuthors must */("firstName" -> firstName) 
+      jsonAuthors must */("familyName" -> familyName)
     }
   }
 }
